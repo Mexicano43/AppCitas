@@ -1,3 +1,9 @@
+using AppCitas.Service.Controllers;
+using AppCitas.Service.Entities;
+using Microsoft.AspNetCore.Identity;
+using System;
+using Xunit;
+
 namespace AppCitas.UnitTests
 {
     public class UnitTest1
@@ -5,28 +11,22 @@ namespace AppCitas.UnitTests
         [Fact]
         public void Test1()
         {
-            // Arrange
-            var x = 1;
-
-            // Act
-            var y = 2 * x;
-
-            // Assert
-            Assert.Equal(2, y);
+            /// AAA - Arrange Act Assert
+            Assert.True(1 == 1);
         }
 
         [Theory]
-        [InlineData(1, 2)]
-        [InlineData(2, 4)]
-        public void Test2(int x, int resp)
+        [InlineData("parametro1", "parametro2", 21)]
+        public void Test2(string param1, string param2, int param3)
         {
             // Arrange
+            string cadena = param1 + " " + param2;
 
             // Act
-            int y = 2 * x;
+            int length = cadena.Length;
 
             // Assert
-            Assert.Equal(resp, y);
+            Assert.Equal(param3, length);
         }
     }
 }

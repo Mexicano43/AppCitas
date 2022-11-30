@@ -16,12 +16,11 @@ namespace AppCitas.UnitTests.Helpers
                 return _lazyInstance.Value;
             }
         }
-
         public HttpClient Client { get; set; }
 
         private TestHelper()
         {
-            // Place for instance initialization code
+            // place for instance initialization code
             Client = new APIWebApplicationFactory<Startup>().CreateDefaultClient();
         }
     }
